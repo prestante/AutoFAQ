@@ -5,8 +5,7 @@
 │   │   ├── test_chat.py
 │   │   └── test_other.py
 │   └── backend/
-│       ├── test_api.py
-│       └── test_validation.py
+│       └── test_api.py
 │    
 ├── pages/  # Page Object паттерн
 │   ├── base_page.py
@@ -16,10 +15,6 @@
 ├── selectors/  # Селекторы для страниц
 │   ├── chat_selectors.py
 │   └── other_selectors.py
-│
-├── utilities/  # Вспомогательные утилиты, например, для работы с API
-│   ├── api_client.py
-│   └── helpers.py
 │
 ├── docker/
 │   ├── Dockerfile
@@ -37,7 +32,6 @@
 tests/: Содержит все тестовые файлы, включая фронтенд и бэкенд тесты.
 pages/: Содержит реализацию паттерна Page Object.
 selectors/: Содержит файлы с селекторами элементов, что соответствует предоставленным данным[1].
-utilities/: Утилитарные функции для взаимодействия с API и другие вспомогательные скрипты. API взаимодействие будет базироваться на предоставленной информации[2].
 docker/: Содержит Dockerfile и скрипт для сборки и запуска контейнера.
 allure/: Папка для отчетов Allure.
 requirements.txt: Здесь будут указаны все зависимости Python, включая Pytest, Playwright и другие необходимые библиотеки.
