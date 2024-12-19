@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from selectors.chat_selectors import *
+from ..selectors.chat_selectors import *
 
 class ChatPage(BasePage):
     async def open_chat(self):
