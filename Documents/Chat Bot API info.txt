@@ -1,0 +1,26 @@
+минимальный запрос POST:
+
+curl -X POST https://chat.autofaq.ai/api/webhooks/widget/6c24eb52-b1ab-4d78-8463-8556d4ee04b3/messages \
+-H 'Cookie: session-id=be6738fa-2568-4362-9249-a78185b91c9c' \
+-F 'message={"id": "other id", "ts": 0, "text": "some text"}'
+
+ответ:
+{"id":"other id","ts":1734532017254,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"Some text","sender":"be6738fa-2568-4362-9249-a78185b91c9c"}%
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+минимальный запрос GET:
+
+curl -X GET https://chat.autofaq.ai/api/webhooks/widget/6c24eb52-b1ab-4d78-8463-8556d4ee04b3/messages \
+-H 'Cookie: session-id=be6738fa-2568-4362-9249-a78185b91c9c'
+
+ответ:
+[{"id":"1de4cb90-b669-4ed5-82c5-e88f2916bae7","ts":1734530149538,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"1","sender":"be6738fa-2568-4362-9249-a78185b91c9c"},{"id":"id","ts":1734530998250,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"some text","sender":"be6738fa-2568-4362-9249-a78185b91c9c"},{"id":"2aab8eee-7cae-469c-b731-dd6a3a9425f7","ts":1734531002215,"text":"Выберите, что вас интересует или задайте свой вопрос","replyToSender":"reply","payload":{"seen":"false","showTitle":"false","messageGroupId":"db0e51b9-6a67-4fe3-9a51-e8a1c5cf95a0","externalMessageId":"id"},"keyboard":{"buttons":[{"text":"Стоимость системы","payload":"1__1__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Запланировать демо","payload":"1__2__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Продукты","payload":"1__3__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Решения","payload":"1__4__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Варианты установки","payload":"1__5__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Шаблон ТЗ","payload":"1__6__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Документация","payload":"1__7__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Описание API","payload":"1__8__f9675566-e22b-4eda-91ad-540b5272e4af"},{"text":"Стать партнером","payload":"1__9__f9675566-e22b-4eda-91ad-540b5272e4af"}]}},{"id":"some id","ts":1734531144834,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"some text","sender":"be6738fa-2568-4362-9249-a78185b91c9c"},{"id":"7d0a1a08-141c-4f23-af02-2b120fbb4ffb","ts":1734531158313,"text":"Выберите, что вас интересует или задайте свой вопрос","replyToSender":"reply","payload":{"seen":"false","showTitle":"false","messageGroupId":"31a22a08-6b9f-457b-84dc-9bc653302a54","externalMessageId":"some id"},"keyboard":{"buttons":[{"text":"Стоимость системы","payload":"1__1__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Запланировать демо","payload":"1__2__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Продукты","payload":"1__3__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Решения","payload":"1__4__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Варианты установки","payload":"1__5__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Шаблон ТЗ","payload":"1__6__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Документация","payload":"1__7__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Описание API","payload":"1__8__1d0fbcd8-3038-4326-9a8f-2657ca069b74"},{"text":"Стать партнером","payload":"1__9__1d0fbcd8-3038-4326-9a8f-2657ca069b74"}]}},{"id":"some id","ts":1734531163250,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"some text","sender":"be6738fa-2568-4362-9249-a78185b91c9c"},{"id":"some id","ts":1734531207026,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"some text","sender":"be6738fa-2568-4362-9249-a78185b91c9c"},{"id":"some id","ts":1734531225763,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"some text","sender":"be6738fa-2568-4362-9249-a78185b91c9c"},{"id":"some id","ts":1734531326864,"sessionId":"be6738fa-2568-4362-9249-a78185b91c9c","text":"some text","sender":"be6738fa-2568-4362-9249-a78185b91c9c"}]%  
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+Пользователь определяется по Cookie: session-id
