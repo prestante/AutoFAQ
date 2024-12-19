@@ -13,8 +13,7 @@
 │   └── other_page.py
 │
 ├── selectors/  # Селекторы для страниц
-│   ├── chat_selectors.py
-│   └── other_selectors.py
+│   └── chat_selectors.py
 │
 ├── docker/
 │   ├── Dockerfile
