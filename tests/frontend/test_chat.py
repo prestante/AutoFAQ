@@ -5,8 +5,9 @@ from time import sleep
 @pytest.mark.frontend
 def test_open_chat(page):
     chat_page = ChatPage(page)
+    # print('WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW')
     chat_page.goto("https://autofaq.ai")
-    print(chat_page.return_url())
+    print(chat_page.get_url())
 
 #     sleep(2)
 

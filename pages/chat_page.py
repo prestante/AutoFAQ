@@ -16,6 +16,3 @@ class ChatPage(BasePage):
 
     async def get_last_message(self):
         return await self.page.inner_text(chat_message_selector)
-    
-    async def return_url(self):
-        return await self.page.url
