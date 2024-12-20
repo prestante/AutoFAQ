@@ -53,9 +53,8 @@ class ChatPage(BasePage):
 #     chat_page.goto("http://saucedemo.com")
 #     print(f"------{chat_page.get_current_url()}======")
 
-@pytest.mark.asyncio
-async def test_print_current_url(page):
+def test_print_current_url(page):
     chat_page = ChatPage(page)
-    await chat_page.goto("http://saucedemo.com")
-    current_url = await chat_page.get_current_url()  # Call the new method
+    chat_page.goto("http://saucedemo.com")
+    current_url = chat_page.get_current_url()  # Call the new method
     print(current_url)
