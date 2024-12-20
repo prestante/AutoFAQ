@@ -4,6 +4,7 @@ import uuid
 
 BASE_URL = "https://chat.autofaq.ai/api/webhooks/widget/6c24eb52-b1ab-4d78-8463-8556d4ee04b3/messages"
 
+@pytest.mark.backend
 @pytest.mark.asyncio
 async def test_post_and_verify_message():
     session_id = str(uuid.uuid4())
@@ -27,6 +28,7 @@ async def test_post_and_verify_message():
     messages = get_response.json()
     assert any(msg["text"] == "Test message" for msg in messages)
 
+@pytest.mark.backend
 @pytest.mark.asyncio
 async def test_just_post_message():
     session_id = str(uuid.uuid4())
@@ -46,6 +48,7 @@ async def test_just_post_message():
     assert response_body["text"] == "Some text"
     assert response_body["sessionId"] == session_id
 
+@pytest.mark.backend
 @pytest.mark.asyncio
 async def test_get_messages():
     session_id = str(uuid.uuid4())
@@ -60,6 +63,7 @@ async def test_get_messages():
     response_json = response.json()
     assert isinstance(response_json, list)
 
+@pytest.mark.backend
 @pytest.mark.asyncio
 async def test_post_message_without_body():
     session_id = str(uuid.uuid4())
