@@ -3,8 +3,8 @@ from pages.chat_page import ChatPage
 from time import sleep
 
 @pytest.mark.frontend
-def test_open_chat(page):
-    chat_page = ChatPage(page)
+def test_open_chat(my_page):
+    chat_page = ChatPage(my_page)
     # print('WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW')
     chat_page.goto("https://autofaq.ai")
 

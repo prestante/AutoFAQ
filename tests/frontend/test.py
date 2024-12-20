@@ -48,8 +48,13 @@ class ChatPage(BasePage):
         return self.page.inner_text(chat_message_selector)
 
 
-def test_print_current_url(page):
+# def test_print_current_url(page):
+#     chat_page = ChatPage(page)
+#     chat_page.goto("http://saucedemo.com")
+#     current_url = chat_page.get_current_url()
+#     print(current_url)
+
+def test_open_chat(page):
     chat_page = ChatPage(page)
-    chat_page.goto("http://saucedemo.com")
-    current_url = chat_page.get_current_url()
-    print(current_url)
+    # print('WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW')
+    chat_page.goto("https://autofaq.ai")
