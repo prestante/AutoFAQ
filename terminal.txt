@@ -1,0 +1,1 @@
+PYTHONPATH=$(pwd) pytest ./tests/frontend/test_chat.py

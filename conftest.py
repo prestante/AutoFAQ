@@ -8,7 +8,7 @@ async def playwright():
 
 @pytest.fixture(scope="session")
 async def browser(playwright):
-    browser = await playwright.chromium.launch(headless=True)  # headless=False для видимого выполнения
+    browser = await playwright.chromium.launch(headless=False)  # headless=False для видимого выполнения
     yield browser
     await browser.close()
 
