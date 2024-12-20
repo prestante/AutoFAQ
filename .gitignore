@@ -1,4 +1,11 @@
+# Ignore macOS system files
 **/.DS_Store
+
+# Ignore Python cache directories
 **/__pycache__/
-**/.pytest_cache
-/allure*
+
+# Ignore pytest cache
+**/.pytest_cache/
+
+# Ignore allure report directories
+**/allure*
