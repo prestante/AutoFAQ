@@ -7,16 +7,20 @@ from custom_selectors.chat_selectors import (
 )
 
 class ChatPage(BasePage):
-    def open_chat(self):
+    def click_chat_button(self):
         self.page.click(chat_button_selector)
 
     def is_chat_open(self):
         return self.page.is_visible(message_input_selector)
 
-    def send_message(self, message):
-        self.page.fill(message_input_selector, message)  # Вводим текст в поле ввода
-        self.page.wait_for_timeout(500)  # Даем странице время на обработку введенного текста
-        self.page.click(send_button_selector)  # Отправляем сообщение
+    def type_message(self, message):
+        self.page.fill(message_input_selector, message)
+        
+    def send_message(self):
+        self.page.click(send_button_selector)
 
-    def get_last_message(self):
-        return self.page.inner_text(chat_message_selector)
+    def wait_a_second(self, milliseconds=1000):
+        self.page.wait_for_timeout(milliseconds)
+
+    def get_chat_messages(self):
+        return self.page.query_selector_all(chat_message_selector)
