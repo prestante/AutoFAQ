@@ -1,6 +1,5 @@
 import pytest
 from pages.chat_page import ChatPage
-from time import sleep
 
 # Фикстура для перехода на страницу и открытия окна чата
 @pytest.fixture(scope="function")
