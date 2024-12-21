@@ -2,6 +2,8 @@
 │
 ├── tests/
 │   ├── frontend/
+│   │   ├── conftest.py
+│   │   ├── pytest.ini
 │   │   ├── test_chat.py
 │   │   └── test_other.py
 │   └── backend/
@@ -12,14 +14,14 @@
 │   ├── chat_page.py
 │   └── other_page.py
 │
-├── selectors/  # Селекторы для страниц
-│   └── chat_selectors.py
+├── custom_selectors/
+│   └── chat_selectors.py  # Селекторы для работы с чат-ботом
 │
 ├── docker/
 │   ├── Dockerfile
 │   └── entrypoint.sh
 │
-├── allure/  # Папка для Allure отчетов
+├── allure/
 │
 ├── pytest.ini
 ├── conftest.py
@@ -30,7 +32,7 @@
 Пояснения:
 tests/: Содержит все тестовые файлы, включая фронтенд и бэкенд тесты.
 pages/: Содержит реализацию паттерна Page Object.
-selectors/: Содержит файлы с селекторами элементов, что соответствует предоставленным данным[1].
+custom_selectors/: Содержит файлы с селекторами элементов, что соответствует предоставленным данным.
 docker/: Содержит Dockerfile и скрипт для сборки и запуска контейнера.
 allure/: Папка для отчетов Allure.
 requirements.txt: Здесь будут указаны все зависимости Python, включая Pytest, Playwright и другие необходимые библиотеки.
