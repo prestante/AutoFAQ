@@ -42,6 +42,12 @@ def test_send_multiple_messages(chat_page):
             f"Ожидаем '{message}' в сообщениях. Получили '{[m.text_content() for m in messages]}'"
 
 @pytest.mark.frontend
+def test_chat_header_background_color(chat_page):
+    background_color = chat_page.get_chat_header_background_color()
+    assert background_color == "rgb(24, 55, 217)", \
+        f"Намеренно неожиданный цвет фона заголовка окна чата: {background_color}"
+
+@pytest.mark.frontend
 def test_close_chat(chat_page):
     chat_page.click_chat_button()
     assert not chat_page.is_chat_open(), "Чат не закрыт"

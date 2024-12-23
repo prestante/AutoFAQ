@@ -2,12 +2,10 @@
 │
 ├── tests/
 │   ├── frontend/
-│   │   ├── conftest.py
 │   │   ├── test_chat.py
 │   │   └── test_other.py
-│   ├── backend/
-│   │   └── test_api.py
-│   └── pytest.ini
+│   └── backend/
+│       └── test_api.py
 │    
 ├── pages/
 │   ├── base_page.py
@@ -21,7 +19,7 @@
 │   ├── Dockerfile
 │   └── entrypoint.sh
 │
-├── allure/
+├── allure_results/
 │
 ├── pytest.ini
 ├── conftest.py
