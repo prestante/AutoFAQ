@@ -3,19 +3,19 @@
 ├── tests/
 │   ├── frontend/
 │   │   ├── conftest.py
-│   │   ├── pytest.ini
 │   │   ├── test_chat.py
 │   │   └── test_other.py
-│   └── backend/
-│       └── test_api.py
+│   ├── backend/
+│   │   └── test_api.py
+│   └── pytest.ini
 │    
-├── pages/  # Page Object паттерн
+├── pages/
 │   ├── base_page.py
 │   ├── chat_page.py
 │   └── other_page.py
 │
 ├── custom_selectors/
-│   └── chat_selectors.py  # Селекторы для работы с чат-ботом
+│   └── chat_selectors.py
 │
 ├── docker/
 │   ├── Dockerfile
@@ -25,7 +25,7 @@
 │
 ├── pytest.ini
 ├── conftest.py
-├── requirements.txt  # Зависимости проекта
+├── requirements.txt
 └── README.md
 
 
