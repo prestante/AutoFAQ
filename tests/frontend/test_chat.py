@@ -1,26 +1,4 @@
-import allure
 import pytest
-from time import sleep
-from pages.chat_page import ChatPage
-
-# Фикстура для перехода на страницу и открытия окна чата
-@pytest.fixture(scope="function")
-def chat_page(my_page):
-    chat_page = ChatPage(my_page)
-    chat_page.goto("https://autofaq.ai")
-    chat_page.click_chat_button()
-    return chat_page
-
-# Фикстура для автоматического добавления скришнота и видеозаписи в allure при возникновении ошибки
-@pytest.fixture(scope="function", autouse=True)
-def add_screenshot_and_video_on_failure(my_page, request):
-    yield
-    if request.node.rep_call.failed:
-        my_page.screenshot(path="allure-results/screenshot.png")
-        allure.attach.file("allure-results/screenshot.png", attachment_type=allure.attachment_type.PNG)
-        my_page.close()
-        sleep(1)
-        allure.attach.file(my_page.video.path(), attachment_type=allure.attachment_type.WEBM)
 
 @pytest.mark.frontend
 def test_open_chat(chat_page):
