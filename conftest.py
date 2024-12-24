@@ -14,7 +14,7 @@ def my_browser(my_playwright):
 
 @pytest.fixture(scope="function")
 def my_page(my_browser):
-    context = my_browser.new_context()
+    context = my_browser.new_context(record_video_dir="allure-results/")
     my_page = context.new_page()
     yield my_page
     context.close()

@@ -20,7 +20,7 @@ class ChatPage(BasePage):
     def send_message(self):
         self.page.click(send_button_selector)
 
-    def wait_a_second(self, milliseconds=1000):
+    def please_wait(self, milliseconds=500):
         self.page.wait_for_timeout(milliseconds)
 
     def get_chat_messages(self):

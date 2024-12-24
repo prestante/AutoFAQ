@@ -1,4 +1,6 @@
+import allure
 import pytest
+from time import sleep
 from pages.chat_page import ChatPage
 
 # Фикстура для перехода на страницу и открытия окна чата
@@ -9,6 +11,17 @@ def chat_page(my_page):
     chat_page.click_chat_button()
     return chat_page
 
+# Фикстура для автоматического добавления скришнота и видеозаписи в allure при возникновении ошибки
+@pytest.fixture(scope="function", autouse=True)
+def add_screenshot_and_video_on_failure(my_page, request):
+    yield
+    if request.node.rep_call.failed:
+        my_page.screenshot(path="allure-results/screenshot.png")
+        allure.attach.file("allure-results/screenshot.png", attachment_type=allure.attachment_type.PNG)
+        my_page.close()
+        sleep(1)
+        allure.attach.file(my_page.video.path(), attachment_type=allure.attachment_type.WEBM)
+
 @pytest.mark.frontend
 def test_open_chat(chat_page):
     assert chat_page.is_chat_open(), "Чат не открыт"
@@ -18,9 +31,9 @@ def test_send_message(chat_page):
     my_message = 'Привет, бот!'
     
     chat_page.type_message(my_message)
-    chat_page.wait_a_second(500)
+    chat_page.please_wait()
     chat_page.send_message()
-    chat_page.wait_a_second(500)
+    chat_page.please_wait()
     
     messages = chat_page.get_chat_messages()
     assert my_message == messages[-1].text_content(), \
@@ -32,9 +45,9 @@ def test_send_multiple_messages(chat_page):
     
     for message in my_messages:
         chat_page.type_message(message)
-        chat_page.wait_a_second(500)
+        chat_page.please_wait()
         chat_page.send_message()
-        chat_page.wait_a_second()
+        chat_page.please_wait(1000)
 
     messages = chat_page.get_chat_messages()
     for message in my_messages:
