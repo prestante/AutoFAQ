@@ -1,0 +1,19 @@
+services:
+  tests:
+    build:
+      context: .
+    volumes:
+      - ./allure-results:/app/allure-results
+      - ./allure-reports:/app/allure-reports
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  allure:
+    image: frankescobar/allure-docker-service
+    container_name: allure-server
+    ports:
+      - "5050:4040"
+    volumes:
+      - ./allure-results:/app/allure-results
+    depends_on:
+      - tests
