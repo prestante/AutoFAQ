@@ -2,15 +2,14 @@
 │
 ├── tests/
 │   ├── frontend/
-│   │   ├── test_chat.py
-│   │   └── test_other.py
+│   │   ├── conftest.py
+│   │   └── test_chat.py
 │   └── backend/
 │       └── test_api.py
 │    
 ├── pages/
 │   ├── base_page.py
-│   ├── chat_page.py
-│   └── other_page.py
+│   └── chat_page.py
 │
 ├── custom_selectors/
 │   └── chat_selectors.py
@@ -22,7 +21,6 @@
 ├── allure_results/
 │
 ├── pytest.ini
-├── conftest.py
 ├── requirements.txt
 └── README.md
 
