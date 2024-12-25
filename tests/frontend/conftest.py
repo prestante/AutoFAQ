@@ -2,7 +2,7 @@ import pytest
 import allure
 from time import sleep
 from playwright.sync_api import sync_playwright
-from pages.chat_page import ChatPage
+from tests.frontend.pages.chat_page import ChatPage
 
 @pytest.fixture(scope="function")
 def my_playwright():

@@ -1,5 +1,5 @@
-from pages.base_page import BasePage
-from custom_selectors.chat_selectors import (
+from tests.frontend.pages.base_page import BasePage
+from tests.frontend.custom_selectors.chat_selectors import (
     chat_button_selector,
     message_input_selector,
     send_button_selector,
