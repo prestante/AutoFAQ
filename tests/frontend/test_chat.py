@@ -11,7 +11,7 @@ def test_send_message(chat_page):
     chat_page.type_message(my_message)
     chat_page.please_wait()
     chat_page.send_message()
-    chat_page.please_wait()
+    chat_page.please_wait(2000)
     
     messages = chat_page.get_chat_messages()
     assert my_message == messages[-1].text_content(), \
@@ -25,7 +25,7 @@ def test_send_multiple_messages(chat_page):
         chat_page.type_message(message)
         chat_page.please_wait()
         chat_page.send_message()
-        chat_page.please_wait(1000)
+        chat_page.please_wait(2000)
 
     messages = chat_page.get_chat_messages()
     for message in my_messages:
