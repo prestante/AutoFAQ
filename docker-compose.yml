@@ -1,10 +1,8 @@
 services:
   tests:
-    build:
-      context: .
+    image: prestante/autofaq
     volumes:
       - ./allure-results:/app/allure-results
-      - ./allure-reports:/app/allure-reports
     environment:
       - PYTHONUNBUFFERED=1
 
