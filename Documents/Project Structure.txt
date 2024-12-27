@@ -1,5 +1,9 @@
 /Users/pres/AutoFAQ/
 │
+├── allure-results/
+│
+├── Documents/
+│
 ├── tests/
 │   ├── frontend/
 │   │   ├── custom_selectors/
@@ -12,21 +16,19 @@
 │   └── backend/
 │       └── test_api.py
 │
-├── docker/
-│   ├── Dockerfile
-│   └── entrypoint.sh
-│
-├── allure-results/
-│
+├── docker-compose.yml
+├── Dockerfile
 ├── pytest.ini
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 
 
 Пояснения:
-tests/: Содержит все тестовые файлы, включая фронтенд и бэкенд тесты.
-pages/: Содержит реализацию паттерна Page Object для frontend тестов.
-custom_selectors/: Содержит файлы с селекторами элементов для frontend тестов.
-docker/: Содержит Dockerfile и скрипт для сборки и запуска контейнера.
 allure-results/: Папка для отчетов Allure.
-requirements.txt: Здесь будут указаны все зависимости Python, включая Pytest, Playwright и другие необходимые библиотеки.
+Documents/: Папка с документами по проекту.
+tests/: Содержит все тестовые файлы, включая фронтенд и бэкенд тесты.
+    custom_selectors/: Содержит файлы с селекторами элементов для frontend тестов.
+    pages/: Содержит реализацию паттерна Page Object для frontend тестов.
+docker-compose.yml: Файл для запуска проекта в контейнерах, включая сервис авто-тестирования и сервис веб-сервера allure.
+Dockerfile: Файл для сборки docker-образа сервиса авто-тестирования (prestante/autofaq).
+requirements.txt: Здесь указаны все зависимости Python, включая Pytest, Playwright и другие необходимые библиотеки.
