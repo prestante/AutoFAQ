@@ -8,26 +8,26 @@ from tests.frontend.custom_selectors.chat_selectors import (
 )
 
 class ChatPage(BasePage):
-    def click_chat_button(self):
-        self.page.click(chat_button_selector)
+    async def click_chat_button(self):
+        await self.page.click(chat_button_selector)
 
-    def is_chat_open(self):
-        return self.page.is_visible(message_input_selector)
+    async def is_chat_open(self):
+        return await self.page.is_visible(message_input_selector)
 
-    def type_message(self, message):
-        self.page.fill(message_input_selector, message)
-        
-    def send_message(self):
-        self.page.click(send_button_selector)
+    async def type_message(self, message):
+        await self.page.fill(message_input_selector, message)
 
-    def please_wait(self, milliseconds=500):
-        self.page.wait_for_timeout(milliseconds)
+    async def send_message(self):
+        await self.page.click(send_button_selector)
 
-    def get_chat_messages(self):
-        return self.page.query_selector_all(chat_message_selector)
-    
-    def get_chat_header_background_color(self):
-        return self.page.evaluate(
+    async def please_wait(self, milliseconds=500):
+        await self.page.wait_for_timeout(milliseconds)
+
+    async def get_chat_messages(self):
+        return await self.page.query_selector_all(chat_message_selector)
+
+    async def get_chat_header_background_color(self):
+        return await self.page.evaluate(
             """(selector) => {
                 const element = document.querySelector(selector);
                 return getComputedStyle(element).backgroundColor;

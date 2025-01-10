@@ -2,5 +2,5 @@ class BasePage:
     def __init__(self, page):
         self.page = page
 
-    def goto(self, url):
-        self.page.goto(url)
+    async def goto(self, url):
+        await self.page.goto(url)
